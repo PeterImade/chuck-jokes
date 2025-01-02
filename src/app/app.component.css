@@ -1,0 +1,9 @@
+.active {
+    color: #ffffff; /* Change the text color */
+    background-color: #007bff; /* Add a background color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make it bold */
+    padding: 5px 10px; /* Add some padding */
+    border-radius: 5px; /* Add rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for any changes */
+  }
