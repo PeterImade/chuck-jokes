@@ -2,3 +2,7 @@
     cursor: pointer;
 }
 
+.result {
+    color: white;
+    background-color: rgb(147, 143, 143);
+}
