@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Joke } from '../../models/Joke';
+import { JokesService } from '../../services/jokes.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,15 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  randomJoke: Joke | null = null
+
+  jokeService = inject(JokesService)
+
   getRandomJoke() {
-    
+    this.jokeService.fetchRandomJoke().subscribe((res) => {
+      this.randomJoke = res
+      console.log(res);
+      
+    })
   }
 }

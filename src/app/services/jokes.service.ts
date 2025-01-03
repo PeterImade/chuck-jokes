@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , provideHttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Joke, SearchedJoke } from '../models/Joke';
 import { Observable } from 'rxjs';
