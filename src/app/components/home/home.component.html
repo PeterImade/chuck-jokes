@@ -8,12 +8,25 @@
             <div class="jokes-content">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" [src]="randomJoke.icon_url" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title"></h5>
+                    <div class="card-body"> 
                       <p class="card-text">{{randomJoke.value}}</p>
                     </div>
                   </div>
             </div>
+        }
+
+        @if(jokes && searchedInput) {
+            <h3>Searched : {{searchedInput}}. Searched results {{jokes.total.toString()}}</h3>
+          @for (joke of jokes.result; track $index) {
+            <div class="jokes-content">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" [src]="joke.icon_url" alt="Card image cap">
+                    <div class="card-body"> 
+                      <p class="card-text">{{joke.value}}</p>
+                    </div>
+                  </div>
+            </div>
+          }
         }
     </div>
 </div>

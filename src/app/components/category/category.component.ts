@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { JokesService } from '../../services/jokes.service';
 
 @Component({
   selector: 'app-category',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })
-export class CategoryComponent {
+export class CategoryComponent implements OnInit {
+  jokeService = inject(JokesService) 
+  categories: string[] = []
 
+  ngOnInit() {
+    this.jokeService.fetchCategories().subscribe((res) => {
+      this.categories = res
+    })
+  }
 }
