@@ -1,7 +1,20 @@
-@for (category of categories; track $index) {
-    <div class="card">
-        <div class="card-body">
-          {{category}}
-        </div>
+<div class="row">
+    <div class="col-12">
+        <h3 class="text-center text-danger">Get a random joke by clicking on any category</h3>
+        @for (category of categories; track $index; let idx = $index) {
+            <div class="card">
+                <div class="card-body" [class.even]="e"  (click)="fetchJokeFromCategory(category, idx)">
+                {{category}}
+                </div>
+            </div>
+     
+            @if (selectedCategoryIndex == idx) {
+                <div class="card result">
+                    <div class="card-body">
+                        <p>{{randomJoke?.value}}</p>
+                    </div>
+                </div>
+            }
+        }
     </div>
-}
+</div>

@@ -20,7 +20,7 @@ export class JokesService {
   }
 
   fetchRandomJokeFromCategory(category: string): Observable<Joke> {
-    return this.httpClient.get<Joke>(`${this.baseUrl}/${category}`)
+    return this.httpClient.get<Joke>(`${this.baseUrl}/random?category=${category}`)
   }
 
   fetchSearchedJoke(searchInput: string): Observable<SearchedJoke> {
